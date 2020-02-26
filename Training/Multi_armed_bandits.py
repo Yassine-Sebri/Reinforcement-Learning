@@ -11,7 +11,7 @@ class Bandit:
         self.N = 0
 
     def pull(self):
-        return np.random.rand() + self.m
+        return np.random.randn() + self.m
 
     def update(self, x):
         self.N += 1
@@ -50,9 +50,9 @@ def run_experiment(m1, m2, m3, eps, N):
 
 
 if __name__ == '__main__':
-    c_1 = run_experiment(1.0, 2.0, 3.0, 0.1, 10000)
-    c_05 = run_experiment(1.0, 2.0, 3.0, 0.05, 10000)
-    c_01 = run_experiment(1.0, 2.0, 3.0, 0.01, 10000)
+    c_1 = run_experiment(1.0, 2.0, 3.0, 0.1, 100000)
+    c_05 = run_experiment(1.0, 2.0, 3.0, 0.05, 100000)
+    c_01 = run_experiment(1.0, 2.0, 3.0, 0.01, 100000)
 
     plt.plot(c_1)
     plt.plot(c_05)
